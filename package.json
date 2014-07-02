@@ -1,0 +1,19 @@
+{
+  "name": "node-argv",
+  "version": "0.0.1",
+  "description": "Parse argv as a String and not as process.argv",
+  "main": "./index",
+  "author": "Gabriele Di Stefano",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrieleds/node-argv"
+  },
+  "keywords": [
+    "git",
+    "helper"
+  ],
+  "homepage": "https://github.com/gabrieleds/node-argv"
+}
