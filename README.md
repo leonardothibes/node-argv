@@ -19,11 +19,11 @@ Parse argv as a String, then feed [minimist](https://github.com/substack/minimis
 ```javascript
 var argv = require('node-argv');
 
-argv('first command --hello true -c "value value" -- second command -b', {\/* minimist [options](https://github.com/substack/minimist#var-argv--parseargsargs-opts) *\/});
+argv('first command --hello true -c "value" -- second command -b', {}); // minimist [options](https://github.com/substack/minimist#var-argv--parseargsargs-opts)
 // ->   {
   options: {
     hello: true,
-    c: 'value value'
+    c: 'value'
   },
   commands: ['first', 'command'],
   through: {
@@ -32,7 +32,7 @@ argv('first command --hello true -c "value value" -- second command -b', {\/* mi
     },
     commands: ['second', 'command']
   },
-  input: ['first', 'command', '--hello', 'true', '-c', 'value value', '--', 'second', 'command', '-b']
+  input: ['first', 'command', '--hello', 'true', '-c', 'value', '--', 'second', 'command', '-b']
 }
 ```
 
