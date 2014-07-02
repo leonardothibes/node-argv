@@ -3,37 +3,37 @@
 Parse argv as a String, then feed [minimist](https://github.com/substack/minimist) and expose the interface: 
 
 ```javascript
-  {
+{
+  options: {},
+  commands: [],
+  through: { // only if '--' is given
     options: {},
-    commands: [],
-    through: { // only if '--' is given
-      options: {},
-      commands: []
-    },
-    input: [] // parsed argv
-  }
+    commands: []
+  },
+  input: [] // parsed argv
+}
 ```
 
 ## Parse String
 
 ```javascript
-  var argv = require('node-argv');
+var argv = require('node-argv');
 
-  argv('first command --hello true -c "value value" -- second command -b', {/* minimist [options](https://github.com/substack/minimist#var-argv--parseargsargs-opts) */});
-  // ->   {
+argv('first command --hello true -c "value value" -- second command -b', {\/* minimist [options](https://github.com/substack/minimist#var-argv--parseargsargs-opts) *\/});
+// ->   {
+  options: {
+    hello: true,
+    c: 'value value'
+  },
+  commands: ['first', 'command'],
+  through: {
     options: {
-      hello: true,
-      c: 'value value'
+      b: true
     },
-    commands: ['first', 'command'],
-    through: {
-      options: {
-        b: true
-      },
-      commands: ['second', 'command']
-    },
-    input: ['first', 'command', '--hello', 'true', '-c', 'value value', '--', 'second', 'command', '-b']
-  }
+    commands: ['second', 'command']
+  },
+  input: ['first', 'command', '--hello', 'true', '-c', 'value value', '--', 'second', 'command', '-b']
+}
 ```
 
 # Parse Array
