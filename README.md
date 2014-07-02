@@ -19,8 +19,9 @@ Parse argv as a String, then feed [minimist](https://github.com/substack/minimis
 ```javascript
 var argv = require('node-argv');
 
-argv('first command --hello true -c "value" -- second command -b', {}); // minimist [options](https://github.com/substack/minimist#var-argv--parseargsargs-opts)
-// ->   {
+argv('first command --hello true -c "value" -- second command -b', {}); // minimist options
+// return
+{
   options: {
     hello: true,
     c: 'value'
@@ -38,15 +39,12 @@ argv('first command --hello true -c "value" -- second command -b', {}); // minim
 
 # Parse Array
 
-This module also parses an Array directly using `minimist` but exposing the previous interface
+This module also parses an Array directly using `minimist` but exposing the above interface
 
 ```javascript
   var argv = require('node-argv');
 
   argv(process.argv.slice(2), {});
-  // ->   {
-    ...
-  }
 ```
 
 # install
