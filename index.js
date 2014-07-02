@@ -51,9 +51,9 @@ function parse (argv, opts) {
       commands: through[din]
     };
     delete through[din];
-    delete parsed[don];
   }
   delete parsed[din];
+  delete parsed[don];
   return result;
   function ignore (s) {
     return s && '' !== s;
