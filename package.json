@@ -6,7 +6,17 @@
   "author": "Gabriele Di Stefano",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "commander": "*",
+    "mocha": "*",
+    "tape": "*",
+    "should": "*",
+    "expect.js": "*"
+  },
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "node node_modules/mocha/bin/mocha -R dot ./test/node"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gabrieleds/node-argv"
