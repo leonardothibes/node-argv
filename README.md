@@ -42,9 +42,9 @@ argv('first command --hello true -c "value" -- second command -b', {}); // minim
 This module also parses an Array directly using `minimist` but exposing the above interface
 
 ```javascript
-  var argv = require('node-argv');
+var argv = require('node-argv');
 
-  argv(process.argv.slice(2), {});
+argv(process.argv.slice(2), {});
 ```
 
 # install
