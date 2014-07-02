@@ -26,9 +26,9 @@ var rSplit = /"(.+?)"|'(.+?)'|\s*(-*\w+)\s*/
   , don = '--';
 
 /**
- * Parse a string.
+ * Parse arguments.
  *
- * @param {line} String to parse
+ * @param {line} String/Array to parse
  * @return {Object}
  * @api public
  */
@@ -39,12 +39,12 @@ function parse (argv, opts) {
   opts[don] = true;
   var parsed = parseArray(argv, opts);
   opts[don] = false;
-  var through = parsed[don].length ? parseArray(parsed[don], opts) : null;
   var result = {
     options: parsed,
     commands: parsed[din],
     input: argv
-  };
+  },
+  through = parsed[don].length ? parseArray(parsed[don], opts) : null;
   if (through) {
     result.through = {
       options: through,
