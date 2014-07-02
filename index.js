@@ -6,6 +6,12 @@
  */
 
 /**
+ * Module dependencies
+ */
+
+var parseArray = require('minimist');
+
+/**
  * Expose
  */
 
@@ -15,7 +21,9 @@ module.exports = parse;
  * Variables
  */
 
-var rSplit = /"(.+?)"|'(.+?)'|\s*(-*\w+)\s*|\s*=?\s*/;
+var rSplit = /"(.+?)"|'(.+?)'|\s*(-*\w+)\s*/
+  , din = '_'
+  , don = '--';
 
 /**
  * Parse a string.
@@ -26,11 +34,28 @@ var rSplit = /"(.+?)"|'(.+?)'|\s*(-*\w+)\s*|\s*=?\s*/;
  */
 
 function parse (argv, opts) {
-  if ('string' === typeof argv) argv = argv.split(rSplit).filter(exclude);
+  if ('string' === typeof argv) argv = argv.split(rSplit).filter(ignore);
   if (!opts) opts = {};
-  // loop here
+  opts[don] = true;
+  var parsed = parseArray(argv, opts);
+  opts[don] = false;
+  var through = parsed[don].length ? parseArray(parsed[don], opts) : null;
+  var result = {
+    options: parsed,
+    commands: parsed[din],
+    input: argv
+  };
+  if (through) {
+    result.through = {
+      options: through,
+      commands: through[din]
+    };
+    delete through[din];
+    delete parsed[don];
+  }
+  delete parsed[din];
   return argv;
-  function exclude (s) {
+  function ignore (s) {
     return s && '' !== s;
   }
 }

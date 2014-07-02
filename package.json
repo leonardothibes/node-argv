@@ -1,21 +1,20 @@
 {
   "name": "node-argv",
-  "version": "0.0.1",
-  "description": "Parse argv as a String and not as process.argv",
+  "version": "0.0.2",
+  "description": "Parse argv as String or process.argv",
   "main": "./index",
   "author": "Gabriele Di Stefano",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "minimist": "*"
+  },
   "devDependencies": {
-    "commander": "*",
     "mocha": "*",
-    "tape": "*",
-    "should": "*",
     "expect.js": "*"
   },
   "scripts": {
     "prepublish": "npm prune",
-    "test": "node node_modules/mocha/bin/mocha -R dot ./test/node"
+    "test": "node node_modules/mocha/bin/mocha -R dot ./test"
   },
   "repository": {
     "type": "git",
