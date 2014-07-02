@@ -54,7 +54,7 @@ function parse (argv, opts) {
     delete parsed[don];
   }
   delete parsed[din];
-  return argv;
+  return result;
   function ignore (s) {
     return s && '' !== s;
   }
