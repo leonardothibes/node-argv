@@ -38,7 +38,7 @@ argv('first command --hello true -c "value" -- second command -b', {});
 }
 ```
 
-# Parse Array
+### Parse Array
 
 This module also parses an Array directly using `minimist` but exposing the above interface
 
@@ -48,9 +48,10 @@ var argv = require('node-argv');
 argv(process.argv.slice(2), {});
 ```
 
+### Target
 The third parameter is the optional `target`, if given it will be used to store the result attributes.
 
-# install
+## install
 
 With [npm](https://npmjs.org) do:
 
@@ -58,6 +59,6 @@ With [npm](https://npmjs.org) do:
 npm install node-argv
 ```
 
-# license
+## license
 
 MIT
