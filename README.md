@@ -14,7 +14,7 @@ Parse argv as a String, then feed [minimist](https://github.com/substack/minimis
 }
 ```
 
-## Parse String
+### Parse String
 
 ```javascript
 var argv = require('node-argv')
