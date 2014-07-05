@@ -28,25 +28,26 @@ var rSplit = /"(.+?)"|'(.+?)'|\s*(-*\w+)\s*/
 /**
  * Parse arguments.
  *
- * @param {line} String/Array to parse
- * @return {Object}
+ * @param {argv} String/Array to parse
+ * @param {opts} Object of properties
+ * @param {target} Object
+ * @return {target|Object}
  * @api public
  */
 
-function parse (argv, opts) {
+function parse (argv, opts, target) {
   if ('string' === typeof argv) argv = argv.split(rSplit).filter(ignore);
   if (!opts) opts = {};
   opts[don] = true;
   var parsed = parseArray(argv, opts);
   opts[don] = false;
-  var result = {
-    options: parsed,
-    commands: parsed[din],
-    input: argv
-  },
-  through = parsed[don].length ? parseArray(parsed[don], opts) : null;
+  var through = parsed[don].length ? parseArray(parsed[don], opts) : null;
+  if (!target) target = {};
+  target.options = parsed;
+  target.commands = parsed[din];
+  target.input = argv;
   if (through) {
-    result.through = {
+    target.through = {
       options: through,
       commands: through[din]
     };
@@ -54,7 +55,7 @@ function parse (argv, opts) {
   }
   delete parsed[din];
   delete parsed[don];
-  return result;
+  return target;
   function ignore (s) {
     return s && '' !== s;
   }

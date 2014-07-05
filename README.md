@@ -17,9 +17,10 @@ Parse argv as a String, then feed [minimist](https://github.com/substack/minimis
 ## Parse String
 
 ```javascript
-var argv = require('node-argv');
+var argv = require('node-argv')
+  , options = {}; // minimist options
 
-argv('first command --hello true -c "value" -- second command -b', {}); // minimist options
+argv('first command --hello true -c "value" -- second command -b', {});
 // return
 {
   options: {
@@ -46,6 +47,8 @@ var argv = require('node-argv');
 
 argv(process.argv.slice(2), {});
 ```
+
+The third parameter is the optional `target`, if given it will be used to store the result attributes.
 
 # install
 
