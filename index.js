@@ -22,7 +22,6 @@ module.exports = parse;
  */
 
 var rSplit = /\s*(?:"|')(.+?)(?:"|'|$)|\s+/
-
   , din = '_'
   , don = '--';
 
