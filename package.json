@@ -1,6 +1,6 @@
 {
   "name": "node-argv",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Parse argv as String or process.argv",
   "main": "./index",
   "author": "Gabriele Di Stefano",
@@ -21,8 +21,9 @@
     "url": "https://github.com/gabrieleds/node-argv"
   },
   "keywords": [
-    "git",
-    "helper"
+    "argv",
+    "arguments",
+    "cli"
   ],
   "homepage": "https://github.com/gabrieleds/node-argv"
 }
