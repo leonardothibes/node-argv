@@ -1,8 +1,8 @@
 
 /*!
  * node-argv
- * Copyright(c) 2014 Gabriele Di Stefano <gabriele.ds+node@gmail.com>
- * MIT Licensed
+ * Copyright(c) 2014 Deploy.Today <support+node@deploy.today>
+ * @license MIT
  */
 
 /**
