@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-/**
+/*
  * Module dependencies
  */
 
