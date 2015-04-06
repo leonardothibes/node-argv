@@ -12,7 +12,7 @@
 var parseArray = require('minimist');
 
 /**
- * Expose
+ * Exports
  */
 
 module.exports = parse;
