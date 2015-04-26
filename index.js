@@ -12,13 +12,13 @@
 var parseArray = require('minimist');
 
 /**
- * Exports
+ * Module exports
  */
 
 module.exports = parse;
 
 /**
- * Variables
+ * Module variables
  */
 
 var rSplit = /\s*(?:"|')(.+?)(?:"|'|$)|\s+/
