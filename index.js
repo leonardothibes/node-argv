@@ -1,3 +1,4 @@
+'use strict';
 
 /*!
  * node-argv
@@ -41,7 +42,7 @@ function parse (argv, opts, target) {
   opts[don] = true;
   var parsed = parseArray(argv, opts);
   opts[don] = false;
-  var through = parsed[don].length ? parseArray(parsed[don], opts) : null;
+  var through = parsed[don] ? parseArray(parsed[don], opts) : null;
   if (!target) target = {};
   target.options = parsed;
   target.commands = parsed[din];
